@@ -17,6 +17,15 @@
 		"./plugin": "./src/plugin.ts",
 		"./typedefs": "./src/typedefs.ts"
 	},
+	"publish": {
+		"exclude": [
+			"./.vscode/",
+			"./.github/",
+			"./test/",
+			"./build*.ts",
+			"./clean.ts"
+		]
+	},
 	"test": {
 		"include": [
 			"./test/*/build.ts",
@@ -48,7 +57,16 @@
 			"typescript": "^5.0.0",
 			"esbuild": "^0.20.1"
 		},
-		"keywords": []
+		"keywords": [
+			"esbuild",
+			"esbuild-plugin",
+			"esbuild-plugin-css",
+			"css-plugin",
+			"css-in-js",
+			"css-bundle",
+			"deno",
+			"typescript"
+		]
 	},
 	"node_packageManager": "npm",
 	"tasks": {

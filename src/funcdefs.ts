@@ -1,6 +1,7 @@
 import { DEBUG } from "./deps.ts"
 import { Namespace } from "./typedefs.ts"
 
+/** guesses the namespace of a url string. see {@link Namespace | `Namespace`} for more details. */
 export const getUriNamespace = (path: string): Namespace => {
 	if (!path || path === "") { return undefined }
 	if (path.startsWith("npm:")) { return "npm" }
@@ -13,6 +14,7 @@ export const getUriNamespace = (path: string): Namespace => {
 	return "local"
 }
 
+/** convert a url string to an actual `URL` object. */
 export const resolveAsUrl = (path: string, base?: string | URL | undefined): URL => {
 	let base_url = base as URL | undefined
 	if (typeof base === "string") {

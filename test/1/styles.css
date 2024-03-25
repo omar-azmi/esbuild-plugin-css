@@ -1,0 +1,6 @@
+@import url("https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css");
+
+#mydiv {
+	width: 100vw;
+	background-color: red;
+}

@@ -25,19 +25,29 @@ export type Namespace =
 	| "jsr"
 	| "npm"
 
+/** css plugin options supported. checkout each field for documentation. */
 export interface PluginOptions {
+	/** define how should the css get bundled:
+	 * - `"bundle"` | `undefined`: css files will be bundled as separate files, inheriting the basename of the importer javascript.
+	 * - `"inject"`: css files will be bundled into a string literal, which will then get injected into your html `document`'s head as a `<style>` element.
+	 * - `"inject-link"`: similar to `"bundle"`, but will also inject a `<link>` element into your `document`'s head that link's to the output bundled css file.
+	 * 
+	 * TODO: implement `"inject-link"`
+	*/
 	mode?: "bundle" | "inject" | "inject-link"
+
 	/** copy over previously cached results. */
 	cache?: Map<string, esbuild.OnLoadResult["contents"]>
+
 	/** css file name filter regex. defaults to `/\.css$/`, so that it captures all files ending with ".css" */
 	filter?: RegExp
 }
 
-export interface PluginOptions_Injectable extends PluginOptions {
+interface PluginOptions_Injectable extends PluginOptions {
 	mode: "inject"
 }
 
-export interface PluginOptions_Bundleable extends PluginOptions {
+interface PluginOptions_Bundleable extends PluginOptions {
 	mode?: "bundle" | undefined
 	/** set the name of the output css file. by default, it is named as its javascript importer's `basename` + `".css"`
 	 * TODO: implement
@@ -45,6 +55,7 @@ export interface PluginOptions_Bundleable extends PluginOptions {
 	name?: (importer_name: string) => string
 }
 
+/** plugin data sent from the resolver to the loader. */
 export interface PluginData {
 	kind: esbuild.OnResolveArgs["kind"]
 }

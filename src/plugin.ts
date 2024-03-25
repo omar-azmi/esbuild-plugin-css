@@ -7,7 +7,7 @@ import { PluginData, PluginOptions, pluginFilter, pluginName, pluginNamespace } 
 */
 const css_importer_map = new Map<string, string>()
 
-
+/** esbuild plugin that bundles css files. compatible with deno and browsers. */
 export const cssPlugin = (options: PluginOptions = {}): esbuild.Plugin => {
 	const {
 		cache = new Map() as NonNullable<PluginOptions["cache"]>,
