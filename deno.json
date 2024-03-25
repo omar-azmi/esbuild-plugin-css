@@ -1,0 +1,57 @@
+{
+	"name": "experiments_ts",
+	"version": "0.0.1",
+	"description": "kill yourself",
+	"author": "Omar Azmi",
+	"license": "Lulz plz don't steal yet",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/omar-azmi/experiments_ts.git"
+	},
+	"bugs": {
+		"url": "https://github.com/omar-azmi/experiments_ts/issues"
+	},
+	"exports": {},
+	"test": {
+		"include": [
+			"./test/",
+			"./src/mod.ts"
+		]
+	},
+	"fmt": {
+		"useTabs": true,
+		"semiColons": false,
+		"singleQuote": false,
+		"lineWidth": 800,
+		"proseWrap": "never",
+		"include": [
+			"./src/"
+		]
+	},
+	"compilerOptions": {
+		"lib": [
+			"esnext",
+			"dom",
+			"deno.ns"
+		],
+		"strict": true,
+		"allowJs": true
+	},
+	"package_json": {
+		"dependencies": {},
+		"devDependencies": {
+			"typescript": "^5.0.0",
+			"esbuild": "^0.20.1"
+		},
+		"keywords": []
+	},
+	"node_packageManager": "npm",
+	"tasks": {
+		"build-dist": "deno run -A ./build_dist.ts",
+		"build-docs": "deno run -A ./build_docs.ts",
+		"build-npm": "deno run -A ./build_npm.ts",
+		"build-npm-dist": "cd \"./npm/\" && npm run build-dist",
+		"clean": "deno run -A ./clean.ts",
+		"test": "deno test -A"
+	}
+}
