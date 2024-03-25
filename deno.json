@@ -1,20 +1,20 @@
 {
-	"name": "experiments_ts",
-	"version": "0.0.1",
-	"description": "kill yourself",
+	"name": "@oazmi/esbuild-plugin-css",
+	"version": "0.1.0",
+	"description": "esbuild plugin for bundling or injecting css (via js) for the Web and Deno.",
 	"author": "Omar Azmi",
 	"license": "Lulz plz don't steal yet",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/omar-azmi/experiments_ts.git"
+		"url": "git+https://github.com/omar-azmi/esbuild-plugin-css.git"
 	},
 	"bugs": {
-		"url": "https://github.com/omar-azmi/experiments_ts/issues"
+		"url": "https://github.com/omar-azmi/esbuild-plugin-css/issues"
 	},
 	"exports": {},
 	"test": {
 		"include": [
-			"./test/",
+			"./test/*/build.ts",
 			"./src/mod.ts"
 		]
 	},

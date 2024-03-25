@@ -11,6 +11,9 @@
 /deno.lock
 /deno.d.ts
 
+# test outputs
+/test/*/output/
+
 # automatic file clones
 /src/readme.md
 /src/license.md
