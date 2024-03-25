@@ -11,7 +11,12 @@
 	"bugs": {
 		"url": "https://github.com/omar-azmi/esbuild-plugin-css/issues"
 	},
-	"exports": {},
+	"exports": {
+		".": "./src/mod.ts",
+		"./funcdefs": "./src/funcdefs.ts",
+		"./plugin": "./src/plugin.ts",
+		"./typedefs": "./src/typedefs.ts"
+	},
 	"test": {
 		"include": [
 			"./test/*/build.ts",
