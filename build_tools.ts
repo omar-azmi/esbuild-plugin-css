@@ -1,15 +1,15 @@
 /** some build specific utility functions */
-import { BuildOptions, PackageJson } from "https://deno.land/x/dnt@0.40.0/mod.ts"
 import {
 	BuildOptions as ESBuildOptions,
 	OutputFile as ESOutputFile,
 	TransformOptions as ESTransformOptions,
 	build as esbuild, stop as esstop, transform as estransform
 } from "https://deno.land/x/esbuild@v0.20.1/mod.js"
+import type { BuildOptions, PackageJson } from "jsr:@deno/dnt@0.41.0"
 import { denoPlugins } from "jsr:@luca/esbuild-deno-loader@0.9.0"
 import { ensureDir } from "jsr:@std/fs@0.218.2"
 import { join as pathJoin } from "jsr:@std/path@0.218.2"
-export { build as dntBuild } from "https://deno.land/x/dnt@0.40.0/mod.ts"
+export { build as dntBuild } from "jsr:@deno/dnt@0.41.0"
 export { copy as copyDir, emptyDir, ensureDir, ensureFile, walk as walkDir } from "jsr:@std/fs@0.218.2"
 export { dirname as pathDirname, join as pathJoin } from "jsr:@std/path@0.218.2"
 

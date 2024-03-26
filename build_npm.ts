@@ -41,19 +41,10 @@ await dntBuild({
 	esModule: true,
 	scriptModule: false,
 	test: false,
-	mappings: Object.fromEntries([
-		// TODO: ISSUE: `dnt` won't currently work with `jsr` imports, not until the following issue is resolved: https://github.com/denoland/dnt/issues/378
-		...[].map((submodule_path) => {
-			return [
-				"jsr:@oazmi/kitchensink@0.7.5/" + submodule_path,
-				{
-					name: "@oazmi/kitchensink",
-					version: "0.7.5-a",
-					subPath: submodule_path,
-				}
-			]
-		}),
-	])
+	// override the test pattern, so that no tests are included, and no Deno.test shims are created for the entirety of the transpiled package.
+	// see the details here: "https://github.com/denoland/dnt?tab=readme-ov-file#test-file-matching"
+	testPattern: "TEST_NOTHING",
+	mappings: Object.fromEntries([])
 })
 
 // copy other files
