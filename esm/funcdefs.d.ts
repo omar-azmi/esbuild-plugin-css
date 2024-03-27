@@ -3,3 +3,4 @@ import { Namespace } from "./typedefs.js";
 export declare const getUriNamespace: (path: string) => Namespace;
 /** convert a url string to an actual `URL` object. */
 export declare const resolveAsUrl: (path: string, base?: string | URL | undefined) => URL;
+//# sourceMappingURL=funcdefs.d.ts.map

@@ -1,6 +1,6 @@
 {
   "name": "@oazmi/esbuild-plugin-css",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "esbuild plugin for bundling or injecting css (via js) for the Web and Deno.",
   "keywords": [
     "esbuild",
@@ -51,5 +51,5 @@
     "typescript": "^5.0.0",
     "esbuild": "^0.20.1"
   },
-  "_generatedBy": "dnt@0.40.0"
+  "_generatedBy": "dnt@dev"
 }

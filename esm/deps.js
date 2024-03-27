@@ -2,8 +2,8 @@
 export var DEBUG;
 (function (DEBUG) {
     DEBUG[DEBUG["LOG"] = 0] = "LOG";
-    DEBUG[DEBUG["ASSERT"] = 0] = "ASSERT";
+    DEBUG[DEBUG["ASSERT"] = 1] = "ASSERT";
     DEBUG[DEBUG["ERROR"] = 1] = "ERROR";
     DEBUG[DEBUG["PRODUCTION"] = 1] = "PRODUCTION";
-    DEBUG[DEBUG["MINIFY"] = 1] = "MINIFY";
+    DEBUG[DEBUG["MINIFY"] = 0] = "MINIFY";
 })(DEBUG || (DEBUG = {}));
