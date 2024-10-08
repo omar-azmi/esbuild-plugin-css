@@ -30,8 +30,8 @@ document.body.append(my_div)
 
 ```ts
 // FILE: ./build.ts
-import * as esbuild from "https://deno.land/x/esbuild@v0.20.1/mod.js"
-import { denoPlugins } from "jsr:@luca/esbuild-deno-loader@0.9.0"
+import * as esbuild from "https://deno.land/x/esbuild@v0.24.0/mod.js"
+import { denoPlugins } from "jsr:@luca/esbuild-deno-loader@0.10.3"
 import { cssPlugin } from "jsr:@oazmi/esbuild-plugin-css"
 
 const result = await esbuild.build({
@@ -89,8 +89,8 @@ Use the `{ mode: "inject" }` plugin option to to have the bundled css become an 
 
 ```ts
 // FILE: ./build.ts
-import * as esbuild from "https://deno.land/x/esbuild@v0.20.1/mod.js"
-import { denoPlugins } from "jsr:@luca/esbuild-deno-loader@0.9.0"
+import * as esbuild from "https://deno.land/x/esbuild@v0.24.0/mod.js"
+import { denoPlugins } from "jsr:@luca/esbuild-deno-loader@0.10.3"
 import { cssPlugin } from "jsr:@oazmi/esbuild-plugin-css"
 
 const result = await esbuild.build({
