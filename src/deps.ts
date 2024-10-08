@@ -1,4 +1,4 @@
-export type * as esbuild from "npm:esbuild@0.20.1"
+export type * as esbuild from "npm:esbuild@0.24.0"
 
 /** flags used for minifying (or eliminating) debugging logs and asserts, when an intelligent bundler, such as `esbuild`, is used. */
 export const enum DEBUG {

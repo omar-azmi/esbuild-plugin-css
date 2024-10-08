@@ -1,6 +1,6 @@
-import { DEBUG, esbuild } from "./deps.ts"
+import { DEBUG, type esbuild } from "./deps.ts"
 import { resolveAsUrl } from "./funcdefs.ts"
-import { PluginData, PluginOptions, copyUrlFileFilter, copyUrlNamespace, pluginFilter, pluginName, pluginNamespace, preserveUrlFilters, preserveUrlNamespace } from "./typedefs.ts"
+import { type PluginData, type PluginOptions, copyUrlFileFilter, copyUrlNamespace, pluginFilter, pluginName, pluginNamespace, preserveUrlFilters, preserveUrlNamespace } from "./typedefs.ts"
 
 /** TODO: I think this info will be needed for being able to change the name of the output css file.
  * (i.e. needed for a custom `PluginOptions_Bundleable.name` function)

@@ -1,6 +1,6 @@
 {
 	"name": "@oazmi/esbuild-plugin-css",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "esbuild plugin for bundling or injecting css (via js) for the Web and Deno.",
 	"author": "Omar Azmi",
 	"license": "Lulz plz don't steal yet",
@@ -51,11 +51,14 @@
 		"strict": true,
 		"allowJs": true
 	},
-	"package_json": {
+	"packageJson": {
 		"dependencies": {},
 		"devDependencies": {
 			"typescript": "^5.0.0",
-			"esbuild": "^0.20.1"
+			"esbuild": "^0.24.0",
+			"typedoc": "^0.26.4",
+			"typedoc-plugin-missing-exports": "^3.0.0",
+			"typedoc-plugin-mermaid": "^1.12.0"
 		},
 		"keywords": [
 			"esbuild",
@@ -68,13 +71,51 @@
 			"typescript"
 		]
 	},
-	"node_packageManager": "npm",
+	"buildDist": {
+		"dir": "./dist/",
+		"log": "verbose",
+		"minify": "syntax",
+		"split": true,
+		"passes": "2",
+		"transform": [
+			{
+				"pattern": "**.js",
+				"loader": "js",
+				"options": {
+					"minifySyntax": true,
+					"platform": "browser",
+					"format": "esm",
+					"target": "esnext"
+				}
+			}
+		],
+		"esbuild": {
+			"chunkNames": "chunks/[hash]",
+			"external": []
+		}
+	},
+	"buildDocs": {
+		"dir": "./docs/",
+		"log": "verbose",
+		"copy": [
+			[
+				"./examples/",
+				"./examples/"
+			]
+		]
+	},
+	"buildNpm": {
+		"dir": "./npm/",
+		"log": "verbose",
+		"install": "npm"
+	},
 	"tasks": {
-		"build-dist": "deno run -A ./build_dist.ts",
-		"build-docs": "deno run -A ./build_docs.ts",
-		"build-npm": "deno run -A ./build_npm.ts",
+		"build-dist": "deno run -A \"jsr:@oazmi/build-tools@0.2.1/cli/dist\" --config=\"./deno.json\"",
+		"build-docs": "deno run -A \"jsr:@oazmi/build-tools@0.2.1/cli/docs\" --config=\"./deno.json\"",
+		"build-npm": "deno run -A \"jsr:@oazmi/build-tools@0.2.1/cli/npm\" --config=\"./deno.json\"",
 		"build-npm-dist": "cd \"./npm/\" && npm run build-dist",
-		"clean": "deno run -A ./clean.ts",
-		"test": "deno test -A"
+		"clean": "deno run -A \"./clean.ts\"",
+		"test": "deno test -A",
+		"publish-jsr": "deno publish"
 	}
 }

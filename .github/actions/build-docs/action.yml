@@ -10,7 +10,7 @@ runs:
 
     - name: deno-task build-docs
       shell: bash
-      run: deno task build-docs "/esbuild-plugin-css/"
+      run: deno task build-docs
 
     - name: deploy github pages
       uses: JamesIves/github-pages-deploy-action@v4

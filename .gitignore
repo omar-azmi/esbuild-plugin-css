@@ -15,5 +15,5 @@
 /test/*/output/
 
 # automatic file clones
-/src/readme.md
-/src/license.md
+# /src/readme.md
+# /src/license.md
