@@ -1,6 +1,6 @@
-import { DEBUG, esbuild } from "./deps.js"
+import { DEBUG, type esbuild } from "./deps.js"
 import { resolveAsUrl } from "./funcdefs.js"
-import { PluginData, PluginOptions, copyUrlFileFilter, copyUrlNamespace, pluginFilter, pluginName, pluginNamespace, preserveUrlFilters, preserveUrlNamespace } from "./typedefs.js"
+import { type PluginData, type PluginOptions, copyUrlFileFilter, copyUrlNamespace, pluginFilter, pluginName, pluginNamespace, preserveUrlFilters, preserveUrlNamespace } from "./typedefs.js"
 
 /** TODO: I think this info will be needed for being able to change the name of the output css file.
  * (i.e. needed for a custom `PluginOptions_Bundleable.name` function)

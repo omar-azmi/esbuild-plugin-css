@@ -1,4 +1,4 @@
-import { Namespace } from "./typedefs.js";
+import type { Namespace } from "./typedefs.js";
 /** guesses the namespace of a url string. see {@link Namespace | `Namespace`} for more details. */
 export declare const getUriNamespace: (path: string) => Namespace;
 /** convert a url string to an actual `URL` object. */

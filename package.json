@@ -1,6 +1,6 @@
 {
   "name": "@oazmi/esbuild-plugin-css",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "esbuild plugin for bundling or injecting css (via js) for the Web and Deno.",
   "keywords": [
     "esbuild",
@@ -44,12 +44,15 @@
     "build-iife-minify": "npx esbuild \"./src/mod.ts\" --bundle --minify --format=iife --outfile=\"./dist/@oazmi/esbuild-plugin-css.iife.min.js\""
   },
   "dependencies": {
-    "esbuild": "0.20.1"
+    "esbuild": "0.24.0"
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
     "typescript": "^5.0.0",
-    "esbuild": "^0.20.1"
+    "esbuild": "^0.24.0",
+    "typedoc": "^0.26.4",
+    "typedoc-plugin-missing-exports": "^3.0.0",
+    "typedoc-plugin-mermaid": "^1.12.0"
   },
   "_generatedBy": "dnt@dev"
 }

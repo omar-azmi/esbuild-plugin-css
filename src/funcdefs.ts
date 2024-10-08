@@ -1,5 +1,5 @@
 import { DEBUG } from "./deps.js"
-import { Namespace } from "./typedefs.js"
+import type { Namespace } from "./typedefs.js"
 
 /** guesses the namespace of a url string. see {@link Namespace | `Namespace`} for more details. */
 export const getUriNamespace = (path: string): Namespace => {
@@ -20,8 +20,8 @@ export const resolveAsUrl = (path: string, base?: string | URL | undefined): URL
 	if (typeof base === "string") {
 		const base_namespace = getUriNamespace(base)
 		switch (base_namespace) {
-			case "relative": case "npm": case "jsr": case "data": {
-				throw new Error(DEBUG.ERROR ? ("the following base namespace is not supported: " + base_namespace) : "")
+			case "relative": case "data": {
+				throw new Error(DEBUG.ERROR ? ("the following base namespace (protocol) is not supported: " + base_namespace) : "")
 			}
 			default: {
 				base_url = resolveAsUrl(base)

@@ -1,4 +1,4 @@
-import { esbuild } from "./deps.js"
+import type { esbuild } from "./deps.js"
 
 /** the plugin's registration name. */
 export const pluginName = "oazmi-css-plugin" as const
@@ -100,4 +100,3 @@ export interface PluginData {
 	importer: esbuild.OnResolveArgs["importer"]
 	originalPath: esbuild.OnResolveArgs["path"]
 }
-

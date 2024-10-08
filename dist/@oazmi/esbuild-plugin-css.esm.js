@@ -32,10 +32,8 @@ var resolveAsUrl = (path, base) => {
     const base_namespace = getUriNamespace(base);
     switch (base_namespace) {
       case "relative":
-      case "npm":
-      case "jsr":
       case "data": {
-        throw new Error(1 /* ERROR */ ? "the following base namespace is not supported: " + base_namespace : "");
+        throw new Error(1 /* ERROR */ ? "the following base namespace (protocol) is not supported: " + base_namespace : "");
       }
       default: {
         base_url = resolveAsUrl(base);

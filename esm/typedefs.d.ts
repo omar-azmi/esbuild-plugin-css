@@ -1,4 +1,4 @@
-import { esbuild } from "./deps.js";
+import type { esbuild } from "./deps.js";
 /** the plugin's registration name. */
 export declare const pluginName: "oazmi-css-plugin";
 /** the namespace used by this plugin. */
